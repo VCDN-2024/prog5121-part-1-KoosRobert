@@ -107,14 +107,14 @@ public class loginMTest {
     }
 @Test
 public void testReturnLoginStatusUnsuccessful() {
-    // Create an instance of loginM with incorrect password and username
+    // Create an instance of loginM with correct password and username
     loginM loginm = new loginM("kyl_1", "Brandon", "Van Loggerenberg", "Ch&&sec@ke99!");
 
     // Call returnLoginStatus method
     String expected = "Username or password is incorrect";
     
-    assertFalse(loginm.loginUser("password", "kyle!!!!!"));
-    String real = loginm.returnLoginStatus();
+    // Attempt login with incorrect password and username
+    String real = loginm.returnLoginStatus("incorrectPassword", "incorrectUsername");
 
     // Check if the expected result matches the actual result
     assertEquals(expected, real);
